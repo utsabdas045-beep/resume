@@ -1,0 +1,295 @@
+:root {
+    --bg: #f9d3fd;
+    --card: #ffffff;
+    --text: #222;
+    --accent: #6c63ff;
+}
+
+#theme-toggle:checked ~ * {
+    --bg: #121212;
+    --card: #1e1e1e;
+    --text: #f5f5f5;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Poppins', sans-serif;
+    transition: 0.4s;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background: var(--card);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text);
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.theme-btn {
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    animation: fadeIn 1s ease;
+}
+
+.profile {
+    width: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: var(--accent);
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+}
+
+
+.socials {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+
+.socials i {
+    font-size: 28px;
+    color: var(--text);
+    transition: 0.3s;
+}
+
+.socials i:hover {
+    color: var(--accent);
+    transform: scale(1.2);
+}
+
+
+
+.projects {
+    padding: 60px 10%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--card);
+    padding: 25px;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+
+.contact {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+section {
+  margin-bottom: 80px;
+}
+
+
+
+@media (max-width: 768px) {
+    nav ul {
+        gap: 15px;
+    }
+}
+
+.about-page {
+    padding: 80px 10%;
+    animation: fadeIn 1s ease;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.about-img {
+    width: 260px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.about-text {
+    max-width: 600px;
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+
+.about-stats {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.about-stats div {
+    background: var(--card);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    min-width: 120px;
+    transition: 0.3s;
+}
+
+.about-stats div:hover {
+    transform: translateY(-8px);
+}
+
+.about-stats h3 {
+    font-size: 1.5rem;
+    color: var(--accent);
+}
+
+
+nav a.active::after {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-stats {
+        justify-content: center;
+    }
+}
+
+.contact-page {
+    text-align: center;
+    padding: 80px 20px;
+    animation: fadeIn 1s ease;
+}
+
+.contact-page p {
+    margin: 10px 0 40px;
+    opacity: 0.8;
+}
+
+.contact-form {
+    max-width: 500px;
+    margin: auto;
+    background: var(--card);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    background: var(--bg);
+    color: var(--text);
+    transition: 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    box-shadow: 0 0 0 2px var(--accent);
+}
+
+
+.contact-form .btn {
+    width: 100%;
+    cursor: pointer;
+}
+.contact-form .btn:hover {
+    transform: translateY(-4px);
+}
